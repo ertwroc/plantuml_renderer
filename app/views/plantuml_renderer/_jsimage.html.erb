@@ -1,0 +1,16 @@
+<%
+  content_for :header_tags do
+    if not @jsplantuml_included
+      @jsplantuml_included = true
+%>
+<%= javascript_include_tag 'jquery.js', :plugin => 'plantuml_renderer' %>
+<%= javascript_include_tag 'rawdeflate.js', :plugin => 'plantuml_renderer' %>
+<%= javascript_include_tag 'plantuml.js', :plugin => 'plantuml_renderer' %>
+<%
+    end
+  end
+%>
+
+<img data-uml="
+<%= code %>
+">
